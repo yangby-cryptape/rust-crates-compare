@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+docker exec rabbitmq-name rabbitmqctl add_vhost vhost1
+docker exec rabbitmq-name rabbitmqctl add_vhost vhost2
+docker exec rabbitmq-name rabbitmqctl set_permissions -p vhost1 guest '.*' '.*' '.*'
+docker exec rabbitmq-name rabbitmqctl set_permissions -p vhost2 guest '.*' '.*' '.*'

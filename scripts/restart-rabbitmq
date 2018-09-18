@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+docker_image="rabbitmq:3.6-alpine"
+
+docker stop -t 1 rabbitmq-name
+docker run \
+    --detach --rm \
+    --hostname rabbitmq-host \
+    --name rabbitmq-name \
+    --publish 4369:4369 \
+    --publish 5671:5671 \
+    --publish 5672:5672 \
+    --publish 25672:25672 \
+    ${docker_image}
